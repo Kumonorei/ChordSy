@@ -24,7 +24,13 @@ namespace WindowsFormsApplication1
             var chordListChorus = "";
             const string Chords = "ABCDEFG";
 
-            for (int i = 0; i < 4; i++)
+            int verseChords;
+            verseChords = Convert.ToInt32(verseChordsNo.Text);
+
+            int chorusChords;
+            chorusChords = Convert.ToInt32(chorusChordsNo.Text);
+
+            for (int i = 0; i < verseChords; i++)
             {
                 var newChord = "";
                 newChord = Chords[rand.Next(6)].ToString();
@@ -32,7 +38,7 @@ namespace WindowsFormsApplication1
                 chordListVerse += " ";
             }
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < chorusChords; i++)
             {
                 var newChord = "";
                 newChord = Chords[rand.Next(6)].ToString();
@@ -40,11 +46,16 @@ namespace WindowsFormsApplication1
                 chordListChorus += " ";
             }
 
-            label3.Text = chordListVerse;
-            label4.Text = chordListChorus;
+            verseChordsOutput.Text = chordListVerse;
+            chorusChordsOutput.Text = chordListChorus;
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
